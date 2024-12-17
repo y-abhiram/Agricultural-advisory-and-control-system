@@ -59,7 +59,7 @@ def get_unique_soil_types(crop_data):
 # Load and preprocess the dataset
 @st.cache_data
 def load_data():
-    data = pd.read_csv('/home/abhiram1289/Desktop/datasets/Crop_Details_all.csv')
+    data = pd.read_csv('Crop_Details_all.csv')
     
     # Apply the conversion to relevant columns
     for column in ['Nitrogen Range (kg/acre)', 'Phosphorus Range (kg/acre)', 'Potassium Range (kg/acre)', 
@@ -218,11 +218,11 @@ crop_data = load_data()
 model, accuracy = train_model(crop_data)
 
 if st.session_state.page == "home":
-    set_page_bg('/home/abhiram1289/Desktop/datasets/aa2.jpeg')  
-    set_sidebar_bg('/home/abhiram1289/Desktop/datasets/aa1.jpeg')  
+    set_page_bg('aa2.jpeg')  
+    set_sidebar_bg('aa1.jpeg')  
     home_page()
 elif st.session_state.page == "next":
-    set_page_bg('/home/abhiram1289/Desktop/datasets/ss2.jpeg')  
-    set_sidebar_bg('/home/abhiram1289/Desktop/datasets/ss1.jpeg')  
+    set_page_bg('ss2.jpeg')  
+    set_sidebar_bg('ss1.jpeg')  
     next_page(crop_data, model, accuracy)
 
